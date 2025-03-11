@@ -1,0 +1,55 @@
+{
+  "name": "@missionsquad/mcp-helper-tools",
+  "version": "1.1.0",
+  "description": "MCP server providing encoding, geolocation, generator, datetime, and security tools",
+  "type": "module",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/missionsquad/mcp-helper-tools.git"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "start": "node build/index.js",
+    "dev": "ts-node --esm src/index.ts",
+    "clean": "rm -rf build",
+    "rebuild": "npm run clean && npm run build",
+    "lint": "tsc --noEmit",
+    "prepare": "npm run build"
+  },
+  "bin": {
+    "mcp-helper-tools": "./build/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "server",
+    "toolkit",
+    "geolocation",
+    "generator",
+    "datetime",
+    "security"
+  ],
+  "author": "cyanheads",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/missionsquad/mcp-helper-tools/issues"
+  },
+  "homepage": "https://github.com/missionsquad/mcp-helper-tools#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "@types/luxon": "latest",
+    "@types/node": "latest",
+    "luxon": "latest",
+    "qrcode": "latest",
+    "qrcode-terminal": "^0.12.0",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "@types/qrcode": "latest",
+    "ts-node": "latest"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
